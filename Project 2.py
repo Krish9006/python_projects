@@ -1,5 +1,5 @@
 def password():
-    passkey = input()
+    passvalue = input()
     # count_uppercase,lowercase,digit,character,no of letter,sequence of password, same letters
     count,upper_count,lower_count,digit_count,char_count,seq_count,same_count=0,0,0,0,0,0,0
 

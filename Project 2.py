@@ -3,7 +3,7 @@ def password():
     # count_uppercase,lowercase,digit,character,no of letter,sequence of password, same letters
     count,upper_count,lower_count,digit_count,char_count,seq_count,same_count=0,0,0,0,0,0,0
 
-    for i in passkey:
+    for i in passvalue:
        count=count+1
        if i.isupper()==True:
            upper_count=upper_count+1

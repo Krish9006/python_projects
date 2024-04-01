@@ -94,4 +94,4 @@ def main_call():
     else:
         print("Invalid choice. Please enter a number from 1 to 6.")
 
-main_call();
+main_call()

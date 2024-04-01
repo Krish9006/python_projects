@@ -1,4 +1,4 @@
-books_in_the_library = {
+books_in_library = {
     1: {"title": "An Autobiography", "author": "Pt. Jr Lal Nehru", "quantity": 5},
     2: {"title": "Arthashastra", "author": "Kautilya", "quantity": 3},
     3: {"title": "Arion and the dolphin", "author": "Vikarm Seth", "quantity": 2}
@@ -11,7 +11,7 @@ users = {}
 
 
 # Function to display books_in_the_library
-def display_books_in_the_library():
+def display_books_in_library():
     print("books_in_the_library:")
     for book_id, book_info in books_in_the_library.items():
         print(f"ID: {book_id}, Title: {book_info['title']}, Author: {book_info['author']}, Quantity: {book_info['quantity']}")
@@ -30,7 +30,7 @@ def register_user():
 
 
 # Function for book Take
-def Take_book():
+def Take_books():
     user_id = int(input("Enter your user ID: "))
     book_id = int(input("Enter the book ID to Take: "))
     if book_id not in books_in_the_library:
@@ -39,14 +39,14 @@ def Take_book():
     if len(users[user_id]["books_checked_out"]) >= 3:
         print("You have already checked out the maximum number of books.")
         return
-    if books_in_the_library[book_id]["quantity"] == 0:
+    if books_in_library[book_id]["quantity"] == 0:
         print("Sorry, this book is currently not available.")
         return
-    books_in_the_library[book_id]["quantity"] -= 1
+    books_in_library[book_id]["quantity"] -= 1
     Take_date = 0  # Start date
     due_date = Take_date + 14  # Due date is 14 days after Take
     users[user_id]["books_checked_out"].append({"book_id": book_id, "Take_date": Take_date, "due_date": due_date})
-    print(f"Book '{books_in_the_library[book_id]['title']}' checked out successfully. Due date: Day {due_date}")
+    print(f"Book '{books_in_library[book_id]['title']}' checked out successfully. Due date: Day {due_date}")
     main_call()
 
 
@@ -80,11 +80,11 @@ def main_call():
     choice = input("Enter your choice (1-6): ")
 
     if choice == '1':
-        display_books_in_the_library()
+        display_books_in_library()
     elif choice == '2':
         register_user()
     elif choice == '3':
-        Take_book()
+        Take_books()
     elif choice == '4':
         return_book()
     
